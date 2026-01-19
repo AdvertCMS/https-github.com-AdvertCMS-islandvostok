@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             </span>
           </div>
           
-          <h1 className="text-7xl md:text-[11rem] font-display font-black mb-8 leading-[0.8] text-white tracking-tighter">
+          <h1 className="text-5xl sm:text-7xl md:text-[11rem] font-display font-black mb-8 leading-[1.1] md:leading-[0.8] text-white tracking-tighter uppercase break-words">
             ИСЛАНД<br />
             <span className="text-outline hover:text-gold-500 transition-all duration-700">ВОСТОК</span>
           </h1>
