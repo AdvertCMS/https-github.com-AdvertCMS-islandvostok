@@ -51,6 +51,5 @@ export const LEGAL_SERVICES: any[] = [
 export const NAV_LINKS = [
   { label: 'О нас', href: '#about' },
   { label: 'Услуги', href: '#services' },
-  { label: 'Оплата', href: '#payment' },
   { label: 'Контакты', href: '#contact' }
 ];

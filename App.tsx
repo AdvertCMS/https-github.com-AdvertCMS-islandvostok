@@ -132,7 +132,7 @@ const App: React.FC = () => {
             <div className="lg:col-span-2">
               <h5 className="text-gold-500 font-display font-bold mb-12 text-[10px] uppercase tracking-[0.5em]">Карта сайта</h5>
               <ul className="space-y-6 md:space-y-8">
-                {['О нас', 'Услуги', 'Оплата', 'Контакты'].map(item => (
+                {['О нас', 'Услуги', 'Контакты'].map(item => (
                   <li key={item}>
                     <a href={`#${item === 'О нас' ? 'about' : item.toLowerCase()}`} className="text-slate-400 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">{item}</a>
                   </li>
