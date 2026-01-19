@@ -9,20 +9,26 @@ const Hero: React.FC = () => {
     offset: ["start start", "end start"]
   });
 
-  // Плавное затухание и легкое масштабирование при прокрутке
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
+  const scrollToServices = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('services');
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   return (
     <section 
       ref={containerRef}
       className="relative min-h-screen flex items-center pt-20 bg-[#020617] overflow-hidden"
     >
-      {/* 
-        Background Image Container 
-        Используем motion.div для плавного управления прозрачностью и масштабом
-      */}
       <motion.div 
         style={{ opacity, scale }}
         className="fixed top-0 right-0 w-full lg:w-3/4 h-full z-0 pointer-events-none"
@@ -72,7 +78,11 @@ const Hero: React.FC = () => {
             </div>
             
             <div className="flex flex-col gap-6 ml-auto md:ml-0">
-              <a href="#services" className="group relative px-16 py-8 bg-gold-600 text-white font-bold overflow-hidden transition-all hover:bg-gold-500 shadow-[0_20px_50px_rgba(217,119,6,0.3)]">
+              <a 
+                href="#services" 
+                onClick={scrollToServices}
+                className="group relative px-16 py-8 bg-gold-600 text-white font-bold overflow-hidden transition-all hover:bg-gold-500 shadow-[0_20px_50px_rgba(217,119,6,0.3)]"
+              >
                 <span className="relative z-10 uppercase tracking-[0.3em] text-xs">Все направления</span>
                 <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
               </a>
@@ -88,10 +98,10 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
       
-      {/* Stylish Scroll Indicator Arrow */}
+      {/* Scroll indicator positioned left on mobile and centered on desktop */}
       <motion.div 
         style={{ opacity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-10 left-6 translate-x-0 md:left-1/2 md:-translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

@@ -4,9 +4,21 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TourCard from './components/TourCard';
 import Chatbot from './components/Chatbot';
-import { LEGAL_SERVICES } from './constants';
+import { LEGAL_SERVICES, NAV_LINKS } from './constants';
 
 const App: React.FC = () => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen font-sans bg-[#020617] text-slate-200 selection:bg-gold-500 selection:text-black">
       <Navbar />
@@ -56,7 +68,13 @@ const App: React.FC = () => {
                 </div>
                 <div className="mt-12 lg:mt-0">
                    <p className="text-white/80 text-lg leading-relaxed mb-10">Мы берем на себя все риски и бюрократию, позволяя вам сосредоточиться на главном.</p>
-                   <a href="#contact" className="text-white text-[10px] uppercase tracking-[0.4em] font-bold border-b-2 border-white/30 pb-3 inline-block hover:border-white transition-all">Начать защиту</a>
+                   <a 
+                    href="#contact" 
+                    onClick={(e) => handleLinkClick(e, '#contact')}
+                    className="text-white text-[10px] uppercase tracking-[0.4em] font-bold border-b-2 border-white/30 pb-3 inline-block hover:border-white transition-all"
+                   >
+                    Начать защиту
+                   </a>
                 </div>
               </div>
             </div>
@@ -132,9 +150,15 @@ const App: React.FC = () => {
             <div className="lg:col-span-2">
               <h5 className="text-gold-500 font-display font-bold mb-12 text-[10px] uppercase tracking-[0.5em]">Карта сайта</h5>
               <ul className="space-y-6 md:space-y-8">
-                {['О нас', 'Услуги', 'Контакты'].map(item => (
-                  <li key={item}>
-                    <a href={`#${item === 'О нас' ? 'about' : item.toLowerCase()}`} className="text-slate-400 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">{item}</a>
+                {NAV_LINKS.map(link => (
+                  <li key={link.label}>
+                    <a 
+                      href={link.href} 
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className="text-slate-400 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
                   </li>
                 ))}
               </ul>

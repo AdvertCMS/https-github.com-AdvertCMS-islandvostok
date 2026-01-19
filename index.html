@@ -35,13 +35,21 @@
       }
     </script>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      
       body {
         background-color: #020617;
         color: #f8fafc;
-        scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
         width: 100%;
+      }
+
+      /* Отступ для всех секций с ID, чтобы фиксированная шапка их не закрывала */
+      section[id] {
+        scroll-margin-top: 100px;
       }
       
       body::before {
