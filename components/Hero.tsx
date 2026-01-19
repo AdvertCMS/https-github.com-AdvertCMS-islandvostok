@@ -88,10 +88,27 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
       
-      <div className="absolute bottom-10 left-6 hidden md:flex items-center gap-6 rotate-90 origin-left text-slate-700 text-[10px] tracking-[1em] uppercase z-20">
-        <span>Листайте ниже</span>
-        <div className="w-20 h-px bg-slate-800"></div>
-      </div>
+      {/* Stylish Scroll Indicator Arrow */}
+      <motion.div 
+        style={{ opacity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="flex flex-col items-center"
+        >
+          <div className="w-px h-12 bg-gradient-to-b from-transparent to-gold-500/50 mb-2"></div>
+          <svg 
+            className="w-6 h-6 text-gold-500/50" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7" />
+          </svg>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
