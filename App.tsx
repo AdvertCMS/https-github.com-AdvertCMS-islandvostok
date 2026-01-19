@@ -48,7 +48,9 @@ const App: React.FC = () => {
               <div className="lg:col-span-4 bg-gold-600 p-8 sm:p-16 flex flex-col justify-between group cursor-default">
                 <div className="space-y-10">
                    <div className="w-16 h-16 border border-white/20 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 0c0 5.591-3.824 10.29-9 11.622" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
                    </div>
                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-white uppercase tracking-tighter leading-none">Комплексная броня</h3>
                 </div>
