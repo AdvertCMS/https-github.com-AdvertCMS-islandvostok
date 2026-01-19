@@ -15,9 +15,9 @@ const Hero: React.FC = () => {
             </span>
           </div>
           
-          <h1 className="text-5xl sm:text-7xl md:text-[11rem] font-display font-black mb-8 leading-[1.1] md:leading-[0.8] text-white tracking-tighter uppercase break-words">
-            ИСЛАНД<br />
-            <span className="text-outline hover:text-gold-500 transition-all duration-700">ВОСТОК</span>
+          <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] font-display font-black mb-8 leading-[1.1] md:leading-[0.85] text-white tracking-tighter uppercase">
+            <span className="whitespace-nowrap">ИСЛАНД</span><br />
+            <span className="text-outline hover:text-gold-500 transition-all duration-700 whitespace-nowrap">ВОСТОК</span>
           </h1>
           
           <div className="flex flex-col md:flex-row md:items-end gap-12 mt-16">

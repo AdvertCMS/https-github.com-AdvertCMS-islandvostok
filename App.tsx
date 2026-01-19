@@ -23,8 +23,8 @@ const App: React.FC = () => {
                    <svg className="w-80 h-80 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.45L19.22 19H4.78L12 5.45zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z" /></svg>
                 </div>
                 <span className="text-gold-500 font-display text-[10px] tracking-[0.5em] uppercase mb-10 block">Наши принципы</span>
-                <h2 className="text-4xl sm:text-5xl md:text-8xl font-display font-bold mb-12 text-white leading-[1.3] md:leading-[0.9] tracking-tighter uppercase break-words">
-                  ЗАЩИТА С <br className="hidden sm:block"/><span className="golden-text">ХАРАКТЕРОМ</span>
+                <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black mb-12 text-white leading-[1.2] md:leading-[0.9] tracking-tighter uppercase break-words">
+                  <span className="whitespace-nowrap">ЗАЩИТА С</span> <br className="hidden sm:block"/><span className="golden-text whitespace-nowrap">ХАРАКТЕРОМ</span>
                 </h2>
                 <p className="max-w-3xl text-slate-400 text-lg md:text-xl font-light leading-relaxed mb-16">
                   Юриспруденция — это не только знание законов, но и стратегия. 25 лет мы доказываем: безвыходных ситуаций нет, есть только неверно выбранная тактика. Мы находим решения там, где другие сдаются.
